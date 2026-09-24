@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: weather-app-workshop
+    runtime: python
+    plan: free
+    branch: master
+    buildCommand: pip install -e .
+    startCommand: uvicorn weather_app.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /

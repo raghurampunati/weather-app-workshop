@@ -46,7 +46,6 @@ async def lifespan(app: FastAPI):
         yield
 
 
-
 app = FastAPI(title="Weather App Workshop", lifespan=lifespan)
 app.mount("/static", StaticFiles(directory=STATIC_DIR), name="static")
 
